@@ -20,6 +20,7 @@ nav ul li:hover {
   list-style: none;
   background-color: blue;
   border: 2px solid;
+  color: white;
   padding: 1.5rem;
 }
 
