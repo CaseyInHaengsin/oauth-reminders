@@ -9,12 +9,22 @@
 </head>
 <body>
   
-<h1> {{coolStuff }}</h1>
+<h1> {{#if user }}
+  {{user.username}}
+  {{ else }}
+  Please just log in
+  {{/if }}
+</h1>
+{{!-- TODO: move nav to template --}}
 <nav>
-  <ul>
-    {{#each providers}}
+  <ul> 
+    {{#if user}}
+      <li class="user-logout"><a href='/logout'>Logout</a></li>
+      {{else}}
+   {{#each providers}}
       <li><a href="/login/{{this}}">Login with {{this}}</a></li>
     {{/each}}
+    {{/if}}
   </ul>
 </nav>
 
